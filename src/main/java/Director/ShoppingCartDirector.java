@@ -20,15 +20,11 @@ public class ShoppingCartDirector extends DirectorFactura{
 
     @Override
     public Factura buildFactura() {
-        List<FacturaItem> facturaItems=new ArrayList<>();
 
+        builderFactura.createFactura();
         for(Item item: shoppingCart.getItems()){
-            FacturaItem facturaItem=new BuilderFacturaItem(item,0.0).build();
-            facturaItems.add(facturaItem);
+            builderFactura.agregarItemFactura(item);
         }
-
-        builderFactura.facturaItems(facturaItems);
-
-        return builderFactura.build();
+       return builderFactura.build();
     }
 }

@@ -8,7 +8,6 @@ public class Factura {
 
     public Factura(){
         this.facturaItems=new ArrayList<>();
-
     }
 
     public List<FacturaItem> getFacturaItems() {

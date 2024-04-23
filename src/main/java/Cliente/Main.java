@@ -14,19 +14,23 @@ import entities.ShoppingCart;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
+        //Creando una instancia de ShoppingCart
         ShoppingCart shoppingCart=new ShoppingCart();
-        Producto producto=new Producto(1L,"Bufandas","Desc",2);
+        //Creando instancias de producto
+        Producto producto=new Producto(1L,"Bufandas","Desc",2.3);
         Producto producto1=new Producto(2L,"Ruana","Desc",5);
-        Item item=new Item(producto,2);
+        //Creando instancias de Item
+        Item item=new Item(producto,3);
         Item item1=new Item(producto1,4);
+        //añadiendo items a shoppingCart
         shoppingCart.getItems().add(item);
         shoppingCart.getItems().add(item1);
-
+        //Creando una instancia de BuilderFactura
         BuilderFactura builderFactura=new BuilderFactura();
+        //Creando una instancia de DirectorFactura, pasando ShoppingCartDirector
         DirectorFactura director=new ShoppingCartDirector(builderFactura,shoppingCart);
+        //Construyendo una factura a partir del director
         Factura factura=director.buildFactura();
-
         System.out.println("Factura: "+factura);
 
         /*
@@ -37,6 +41,7 @@ public class Main {
         System.out.println(factura);
 
          */
+        
 
     }
 }
